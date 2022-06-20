@@ -12,6 +12,10 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
 
+  const total = good + neutral + bad
+  const average = (good-bad)/total
+  const percentageGood = good/total*100
+
   return (
     <>
       <h1>Unicafe Feedback</h1>
@@ -24,6 +28,12 @@ const App = () => {
       <h3>Good: {good}</h3>
       <h3>Bad: {bad}</h3>
       <h3>Neutral: {neutral}</h3>
+
+      <h4>Total: {total}</h4>
+      <h4>Average Score: {average}</h4>
+      <h4>Percentage of positive: {percentageGood} %</h4>
+
+
     </>
     
   )
