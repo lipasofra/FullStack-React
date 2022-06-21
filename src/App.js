@@ -35,9 +35,11 @@ const App = () => {
 
   const [points, setPoints] = useState(new Array(7).fill(0))
 
+  const winner = points.indexOf(Math.max(...points))
+
   return (
     <>
-      <h4>Anecdotes</h4>
+      <h1>Anecdotes</h1>
       <div>
         {anecdotes[selected]}
       </div>
@@ -47,6 +49,14 @@ const App = () => {
       <br></br>
       <Button handleClick={()=>{addVote(selected)}} text="vote" />
       <Button handleClick={()=>{randomAnecdote()}} text="next anecdote" />
+
+      <h2>Anecdote with most votes</h2>
+      <div>
+        {anecdotes[winner]}
+      </div>
+      <div>
+        has {points[winner]} votes
+      </div>
 
     </>
     
