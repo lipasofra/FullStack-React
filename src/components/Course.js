@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = (props) => {
     return(
-      <h1>{props.name}</h1>
+      <h2>{props.name}</h2>
     )
     
   }
@@ -28,7 +28,7 @@ const Header = (props) => {
     const exercises = parts.map(part => part.exercises)
     const total = exercises.reduce((acumulado=0, exercisesPart) => {return exercisesPart + acumulado})
     return (
-      <p>Number of exercises {total}</p>
+      <p style={{fontWeight: 'bold'}}>Number of exercises {total}</p>
     )
   }
 
